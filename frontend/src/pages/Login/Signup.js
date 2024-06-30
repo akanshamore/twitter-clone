@@ -1,35 +1,42 @@
 import React from 'react';
+
 import TwitterIcon from '@mui/icons-material/Twitter';
 import twitterImage from "../../assets/images/twitter.jpeg";
 import { useState } from 'react';
+
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth"
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth"
-const Login = () => {
 
 
+const Signup = () => {
+    const [username, setUsername] = useState('');
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // const [error, setError] = useState('');
+    ;
+
 
     const [
-        signInWithEmailAndPassword,
+        createUserWithEmailAndPassword,
         user,
         loading,
-        error
-    ] = useSignInWithEmailAndPassword(auth);
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
     console.log(user)
+
+
 
     const handleSubmit = (e) => {
 
         e.preventDefault();
         console.log("clicked")
         console.log(email, password)
-        signInWithEmailAndPassword(email, password);
+        createUserWithEmailAndPassword(email, password);
     }
 
     return (
 
-        <div className='login-container'>
+        <div className='signup-container'>
             <div className='image-container'>
                 <img src={twitterImage} alt="" />
             </div>
@@ -37,6 +44,17 @@ const Login = () => {
                 <TwitterIcon />
                 <h2>Happening now</h2>
                 <form onSubmit={handleSubmit}>
+                    <input type="text"
+                        className='display-name'
+                        placeholder='@username'
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                    <input type="text"
+                        className='display-name'
+                        placeholder='Enter full name'
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+
                     <input type="email"
                         className='email'
                         placeholder='Email address'
@@ -48,9 +66,10 @@ const Login = () => {
                         placeholder='Password'
                         onChange={(e) => setPassword(e.target.value)}
                     />
+
                     <div className='btn-login'>
                         <button type="submit" className='="btn'>
-                            Login
+                            Sign Up
                         </button>
                     </div>
                 </form>
@@ -59,4 +78,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default Signup;
