@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Signup from './pages/Login/Signup';
 import ProtectedRoute from './pages/ProtectedRoute';
+import PageLoading from './pages/PageLoading';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
 
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
-
+          <Route path='/page-loading' element={<PageLoading />} />
 
 
         </Routes>

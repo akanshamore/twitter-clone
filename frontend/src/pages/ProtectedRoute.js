@@ -2,13 +2,14 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.init";
 import { Navigate, unstable_useViewTransitionState } from "react-router-dom";
+import PageLoading from "./PageLoading";
 
 const ProtectedRoute = ({ children }) => {
 
     const [user, isLoading] = useAuthState(auth)
     if (isLoading) {
 
-        console.log('loading...');
+        return <PageLoading />
     }
 
     if (!user) {
