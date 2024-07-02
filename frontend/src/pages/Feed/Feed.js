@@ -5,7 +5,7 @@ const Feed = () => {
 
 
     return (
-        <div>Feed</div>
+        <div>Welcome to Feed</div>
 
 
     )
