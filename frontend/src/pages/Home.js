@@ -6,6 +6,7 @@ import auth from '../firebase.init';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from 'firebase/auth';
 import { Outlet } from 'react-router-dom';
+import TweetBox from './Feed/TweetBox/TweetBox';
 
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
         <div className='app'>
 
             <Sidebar handleLogout={handleLogout} user={user} />
+            <TweetBox />
             <Outlet />
             <Widgets />
         </div>

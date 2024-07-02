@@ -5,7 +5,12 @@ const Feed = () => {
 
 
     return (
-        <div>Welcome to Feed</div>
+        <div className="feed">
+            <div className="feed_header">
+                <h2>Home</h2>
+            </div>
+
+        </div>
 
 
     )
