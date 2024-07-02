@@ -8,7 +8,7 @@ import ProtectedRoute from './pages/ProtectedRoute';
 import PageLoading from './pages/PageLoading';
 import Feed from './pages/Feed/Feed';
 import Explore from './pages/Explore/Explore';
-import Notifications from '@mui/icons-material/Notifications';
+import Notifications from './pages/Notifications/Notifications';
 import Messages from './pages/Messages/Messages';
 import Bookmarks from './pages/Bookmarks/Bookmarks';
 import Lists from './pages/Lists/Lists';
@@ -21,7 +21,10 @@ function App() {
       <BrowserRouter>
         <Routes>
 
-          <Route path='/' element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path='/' element={<ProtectedRoute><Home /></ProtectedRoute>} >
+            <Route index element={<Feed />} />
+
+          </Route>
           <Route path='home' element={<ProtectedRoute><Home /></ProtectedRoute>} >
 
             <Route path='feed' element={<Feed />} />

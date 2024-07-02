@@ -7,7 +7,7 @@ const Notifications = () => {
 
 
         <div className="page">
-            <h2 className="pageTtitle">Welcome to Notifications </h2>
+            <h2 className="pageTitle">Welcome to Notifications </h2>
         </div>
     )
 }
