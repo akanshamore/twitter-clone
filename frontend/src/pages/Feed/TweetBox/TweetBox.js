@@ -11,7 +11,14 @@ const TweetBox = () => {
     const handleTweet = (e) => {
 
         e.preventDefault();
-        console.log(post);
+
+
+        const userPost = {
+            post: post,
+            photo: imageURL
+        }
+
+        console.log(userPost);
     }
     return (
 
@@ -33,7 +40,7 @@ const TweetBox = () => {
 
                         <AddPhotoAlternateIcon />
                     </label>
-                    <input type="file" id="image" className="imageInput" />
+                    <input type="file" id="image" className="imageInput" onChange={(e) => setImageURL(e.target.files[0])} />
                     <Button className="tweetBox_tweetButton" type="submit">
                         Tweet
                     </Button>

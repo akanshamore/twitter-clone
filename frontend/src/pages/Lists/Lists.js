@@ -1,4 +1,5 @@
 import React from "react";
+import '../Page.css'
 
 const Lists = () => {
 
@@ -6,7 +7,7 @@ const Lists = () => {
 
 
         <div className="page">
-            <h2 className="pageTtitle">Welcome to Lists </h2>
+            <h2 className="pageTitle">Welcome to Lists </h2>
         </div>
     )
 }
